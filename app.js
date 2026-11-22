@@ -71,11 +71,11 @@ function drawQr(el, url, size) {
 /* ---------- 랜딩 ---------- */
 Router.on('/', root => {
   root.append(h(`
-    <section class="hero">
+    <section class="hero split center">
       <div class="flip"><div class="flipper" id="demo"></div></div>
-      <h1>명함, 입력만 하면<br>끝나요</h1>
+      <div><h1>명함, 입력만 하면<br>끝나요</h1>
       <p class="muted">템플릿을 넘겨 보며 고르고, 인쇄용 이미지와 모바일 디지털 명함을 한 번에 받아 가세요.</p>
-      <a class="btn primary big block" href="#/editor">명함 만들기</a>
+      <a class="btn primary big block" href="#/editor">명함 만들기</a></div>
     </section>`));
   const gallery = h('<section><h2>템플릿</h2><div class="gallery"></div></section>');
   root.append(gallery);
@@ -161,13 +161,16 @@ Router.on('/export', root => {
     <section class="stack">
       <h1>완성!</h1>
       <div class="pv-pair"><div id="f"></div><div id="b"></div></div>
+      <div class="split"><div class="stack">
       <h2>인쇄용 이미지</h2>
       <p class="muted small">90 × 50mm를 300dpi(1063 × 591px)로 저장해요. 인쇄소에 맡길 때는 재단 여백을 따로 요청하세요.</p>
       <div class="row"><button class="btn primary grow" id="dlf">앞면 저장</button><button class="btn grow" id="dlb">뒷면 저장</button></div>
+      </div><div class="stack">
       <h2>디지털 명함</h2>
       <p class="muted small">링크를 받은 사람은 명함을 보고 연락처를 바로 저장할 수 있어요. 정보는 링크 안에만 들어 있고 서버에 저장되지 않아요.</p>
       <div class="row"><button class="btn primary grow" id="share">링크 공유</button><a class="btn grow" href="${esc(url.slice(url.indexOf('#')))}">미리 보기</a></div>
       <div class="center"><div class="bigqr" id="bigqr"></div></div>
+      </div></div>
       <a class="btn ghost block" href="#/editor">← 다시 고치기</a>
     </section>`));
   $('#f').innerHTML = frontHtml(card, false);

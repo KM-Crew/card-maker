@@ -41,7 +41,6 @@
 
 /* ---- 편집기 ---- */
 .editor { display: grid; gap: 18px; }
-@media (min-width: 860px) { .editor { grid-template-columns: 1.1fr 1fr; align-items: start; } .preview { position: sticky; top: 76px; } }
 .sidebtns { display: flex; gap: 6px; margin-bottom: 12px; justify-content: center; }
 .swatch { width: 34px; height: 34px; border-radius: 50%; border: 3px solid #fff; box-shadow: 0 0 0 1px var(--line); cursor: pointer; }
 .swatch.on { box-shadow: 0 0 0 2px var(--fg); }
@@ -49,8 +48,16 @@
 .form h3:first-child { margin-top: 0; }
 
 .pv-pair { display: grid; gap: 14px; }
-@media (min-width: 640px) { .pv-pair { grid-template-columns: 1fr 1fr; } }
 .bigqr { display: inline-block; background: #fff; padding: 12px; border-radius: 14px; border: 1px solid var(--line); }
 .digital .name-lg { font-size: 24px; font-weight: 800; }
 .links { display: grid; gap: 8px; }
 .links .btn { justify-content: flex-start; font-weight: 600; }
+
+/* ---------- PC 화면 ---------- */
+.pc .hero { text-align: left; padding: 30px 0 10px; }
+.pc .flip { max-width: 460px; margin: 0; }
+.pc .gallery { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.pc .editor { grid-template-columns: 1.1fr 1fr; align-items: start; }
+.pc .preview { position: sticky; top: 92px; }
+.pc .pv-pair { grid-template-columns: 1fr 1fr; }
+.pc body[data-page=c] main { max-width: 560px; }
